@@ -4,7 +4,10 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:\\Users\\bigbanana666\\Desktop\\game engine\\glfw-3.3.8.bin.WIN64\\include"
+                "C:/Users/bigbanana666/Desktop/game engine/include",
+                "C:/Users/bigbanana666/Desktop/game engine/glfw-3.4.bin.WIN64/include",
+                "C:/Users/bigbanana666/Desktop/game engine/imgui",
+                "C:/Users/bigbanana666/Desktop/game engine/imgui/backends"
             ],
             "defines": [
                 "_DEBUG",
