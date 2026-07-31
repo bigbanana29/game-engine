@@ -1,0 +1,16 @@
+C:/Users/bigbanana666/Desktop/game engine/code/build/CMakeFiles/Renderer.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/CMakeFiles/INSTALL.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/minifb.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/minifb_version_info.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/noise.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/input_events.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/input_events_cpp.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/multiple_windows.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/hidpi.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/fullscreen.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/timer.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/hide_cursor.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/INSTALL.dir
+C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/CMakeFiles/ALL_BUILD.dir

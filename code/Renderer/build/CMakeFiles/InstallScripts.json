@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/bigbanana666/Desktop/game engine/code/Renderer/build/cmake_install.cmake",
+		"C:/Users/bigbanana666/Desktop/game engine/code/Renderer/build/minifb/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

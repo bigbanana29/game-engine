@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="Renderer.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="c7a3bec5-5856-337f-b012-0ba1c098bb1c">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="minifb/minifb.vcxproj"/>
+	</Project>
+	<Folder Name="/CMakePredefinedTargets/">
+		<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="8d230009-3213-39a8-bce4-4d14767ce56d" DefaultStartup="true">
+			<BuildDependency Project="Renderer.vcxproj"/>
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/fullscreen.vcxproj"/>
+			<BuildDependency Project="minifb/hide_cursor.vcxproj"/>
+			<BuildDependency Project="minifb/hidpi.vcxproj"/>
+			<BuildDependency Project="minifb/input_events.vcxproj"/>
+			<BuildDependency Project="minifb/input_events_cpp.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+			<BuildDependency Project="minifb/minifb_version_info.vcxproj"/>
+			<BuildDependency Project="minifb/multiple_windows.vcxproj"/>
+			<BuildDependency Project="minifb/noise.vcxproj"/>
+			<BuildDependency Project="minifb/timer.vcxproj"/>
+		</Project>
+		<Project Path="INSTALL.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="7637ac5c-7e87-37ab-b3a0-750f3cbbfb9d">
+			<BuildDependency Project="ALL_BUILD.vcxproj"/>
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+			<Build Solution="Release|*" Project="false"/>
+			<Build Solution="MinSizeRel|*" Project="false"/>
+			<Build Solution="RelWithDebInfo|*" Project="false"/>
+		</Project>
+		<Project Path="ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="55876339-ba45-3ec9-9233-69cbc24bbe33"/>
+	</Folder>
+	<Folder Name="/Examples/">
+		<Project Path="minifb/fullscreen.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="6598b4a4-6398-33a7-abf0-808ebad68537">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/hide_cursor.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="ea1f2ed7-5e23-31c1-bd76-5e3459701114">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/hidpi.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="6bdcbe29-fa1f-3055-9885-88996b3dbcd7">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/input_events.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="ba873dba-2def-3243-a5dd-f6621222fa04">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/input_events_cpp.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="81542b98-b74f-383f-ba97-dcc4a27c0190">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/minifb_version_info.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="7d3f76cd-df33-383e-ab06-ad1dafbb83d4">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/multiple_windows.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="8b3eb22b-635a-32dc-9d80-85b81f2920c1">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/noise.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="3878927b-da77-3330-ba39-ee92bb0632f8">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+		<Project Path="minifb/timer.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="3df2f653-a2fc-393f-8b07-939b3b24cdb7">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="minifb/minifb.vcxproj"/>
+		</Project>
+	</Folder>
+	<Folder Name="/Libs/">
+		<Project Path="minifb/minifb.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="cc6c4085-f211-3fb7-85e6-9640495ec4df">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		</Project>
+	</Folder>
+</Solution>
