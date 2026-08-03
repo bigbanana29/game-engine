@@ -368,10 +368,23 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Camera.cpp" />
+    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Camera.h" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Common.cpp" />
     <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Common.h" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Disk.cpp" />
+    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Disk.h" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Primitive.cpp" />
+    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Primitive.h" />
+    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Ray.h" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Renderer.cpp" />
     <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Renderer.h" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\SceneObject.cpp" />
+    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\SceneObject.h" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Sphere.cpp" />
+    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Sphere.h" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Triangle.cpp" />
+    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Triangle.h" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\main.cpp" />
   </ItemGroup>
   <ItemGroup />

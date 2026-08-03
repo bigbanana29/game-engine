@@ -4,8 +4,14 @@
 # APP_SOURCES at CMakeLists.txt:8 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/*.cpp")
 set(OLD_GLOB
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Camera.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Common.cpp"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Disk.cpp"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Primitive.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Renderer.cpp"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/SceneObject.cpp"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Sphere.cpp"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Triangle.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -32,8 +38,15 @@ endif()
 # APP_SOURCES at CMakeLists.txt:8 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/*.h")
 set(OLD_GLOB
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Camera.h"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Common.h"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Disk.h"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Primitive.h"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Ray.h"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Renderer.h"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/SceneObject.h"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Sphere.h"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/Triangle.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
