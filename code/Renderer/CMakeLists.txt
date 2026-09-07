@@ -1,29 +1,31 @@
 cmake_minimum_required(VERSION 3.15)
 project(Renderer LANGUAGES CXX)
- 
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
- 
-# 项目本身的源文件：
+
+# 收集所有源文件
 file(GLOB_RECURSE APP_SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_SOURCE_DIR}/source/*.cpp"
-    "${CMAKE_SOURCE_DIR}/source/*.h"
-    "${CMAKE_SOURCE_DIR}/source/*.hpp"
+    "${CMAKE_SOURCE_DIR}/source/src/*.cpp"
 )
- 
+
 add_executable(Renderer ${APP_SOURCES})
- 
-# 头文件附加目录：minifb/include 和 glm
+
+# ============================================================
+# 所有头文件搜索路径
+# ============================================================
 target_include_directories(Renderer PRIVATE
+    "${CMAKE_SOURCE_DIR}/source/head"
     "${CMAKE_SOURCE_DIR}/minifb/include"
-    "C:/Users/bigbanana666/Desktop/game engine/code/Renderer"   # ← 指向 Renderer 目录，而不是 glm 目录
+    "${CMAKE_SOURCE_DIR}"          # ← 关键！让 #include <glm/glm.hpp> 能找到
 )
- 
-# 添加 minifb 到构建项目：
+
+# 添加 minifb 子项目
 add_subdirectory(minifb)
- 
-# 链接库：
+
+# 链接库
 target_link_libraries(Renderer PRIVATE minifb)
+
 if (WIN32)
 target_link_libraries(Renderer PRIVATE
     minifb

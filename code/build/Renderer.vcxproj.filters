@@ -1,70 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Camera.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Common.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Common.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Disk.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Disk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Primitive.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Renderer.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Primitive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\SceneObject.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Sphere.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Triangle.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\SceneLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\main.cpp">
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\SceneObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Common.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Disk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Primitive.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Ray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\SceneObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Sphere.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Triangle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{DB142C69-916A-3192-AC0E-FA4EF8EE2E11}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{C393AC8E-F74C-36BD-BF17-CDB6CB382C44}</UniqueIdentifier>
     </Filter>

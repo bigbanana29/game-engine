@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -112,10 +112,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -142,7 +142,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -169,10 +169,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -199,7 +199,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -226,10 +226,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -256,7 +256,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -282,10 +282,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\head;C:\Users\bigbanana666\Desktop\game engine\code\Renderer\minifb\include;C:\Users\bigbanana666\Desktop\game engine\code\Renderer;C:\Users\bigbanana666\Desktop\game engine\code\build\minifb\generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -368,24 +368,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Camera.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Camera.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Common.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Common.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Disk.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Disk.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Primitive.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Primitive.h" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Ray.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Renderer.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Renderer.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\SceneObject.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\SceneObject.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Sphere.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Sphere.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Triangle.cpp" />
-    <ClInclude Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\Triangle.h" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\main.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Camera.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Common.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Disk.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Light.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Primitive.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Renderer.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Scene.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\SceneLoader.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\SceneObject.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Sphere.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Triangle.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\main.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

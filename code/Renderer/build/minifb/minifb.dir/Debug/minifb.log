@@ -1,9 +1,0 @@
-﻿  Building Custom Rule C:/Users/bigbanana666/Desktop/game engine/code/Renderer/minifb/CMakeLists.txt
-  MiniFB_common.c
-  MiniFB_internal.c
-  MiniFB_timer.c
-  MiniFB_GL.c
-  WinMiniFB.c
-  正在生成代码...
-  MiniFB_cpp.cpp
-  minifb.vcxproj -> C:\Users\bigbanana666\Desktop\game engine\code\Renderer\build\minifb\Debug\minifb.lib
