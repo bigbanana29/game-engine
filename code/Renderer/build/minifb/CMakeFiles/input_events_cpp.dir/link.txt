@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\input_events_cpp.dir/objects.a
-C:\software\MinGW\bin\ar.exe qc CMakeFiles\input_events_cpp.dir/objects.a @CMakeFiles\input_events_cpp.dir\objects1.rsp
-C:\software\MinGW\bin\c++.exe -Wl,--whole-archive CMakeFiles\input_events_cpp.dir/objects.a -Wl,--no-whole-archive -o input_events_cpp.exe -Wl,--out-implib,libinput_events_cpp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\input_events_cpp.dir\linkLibs.rsp

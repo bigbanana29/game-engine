@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\hidpi.dir/objects.a
-C:\software\MinGW\bin\ar.exe qc CMakeFiles\hidpi.dir/objects.a @CMakeFiles\hidpi.dir\objects1.rsp
-C:\software\MinGW\bin\c++.exe -Wl,--whole-archive CMakeFiles\hidpi.dir/objects.a -Wl,--no-whole-archive -o hidpi.exe -Wl,--out-implib,libhidpi.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hidpi.dir\linkLibs.rsp

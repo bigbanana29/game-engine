@@ -1,0 +1,20 @@
+#pragma once
+#include "Ray.h"
+
+class Camera
+{
+public:
+    void Initialize(const Vector3f& p, const Vector3f& target, const Vector3f& up,
+        float pov, float n, float f, int W, int H);
+
+    Ray GetRay(float x, float y) const;
+
+    // ===== ÐÂÔö Getter =====
+    const Vector3f& GetPosition() const { return mPosition; }
+    const Matrix4x4& GetInvCombinedMatrix() const { return mInvCombinedMatrix; }
+
+private:
+    Vector3f mPosition;
+    Matrix4x4 mCombinedMatrix;
+    Matrix4x4 mInvCombinedMatrix;
+};

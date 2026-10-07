@@ -56,7 +56,7 @@
                 <Rotation>0, 0, 0</Rotation>
                 <Scale>1</Scale>
             </Transform>
-            <Material>M_Lambert_Red</Material>
+            <Material>M_Metal_Sphere2</Material>
             <Primitives>
                 <Sphere>
                     <Radius>0.3</Radius>

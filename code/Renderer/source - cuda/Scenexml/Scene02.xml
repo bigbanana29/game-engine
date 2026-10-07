@@ -1,0 +1,145 @@
+<Scene>
+    <Camera>
+        <Position>0, 0, 0</Position>
+        <Target>0, 0, 1</Target>
+        <Up>0, 1, 0</Up>
+        <NearZ>0.1</NearZ>
+        <FarZ>1000</FarZ>
+        <Fov>60</Fov>
+    </Camera>
+
+    <SceneObjects>
+        <!-- 左墙 (x = -2)  法线 +x -->
+        <SceneObject>
+            <Transform>
+                <Position>0, 0, 0</Position>
+                <Rotation>0, 0, 0</Rotation>
+                <Scale>1.0</Scale>
+            </Transform>
+            <Primitives>
+                <Triangle>
+                    <Vertex>-2, -1.5, 2</Vertex>
+                    <Vertex>-2,  1.5, 2</Vertex>
+                    <Vertex>-2,  1.5, 6</Vertex>
+                </Triangle>
+                <Triangle>
+                    <Vertex>-2, -1.5, 2</Vertex>
+                    <Vertex>-2,  1.5, 6</Vertex>
+                    <Vertex>-2, -1.5, 6</Vertex>
+                </Triangle>
+            </Primitives>
+        </SceneObject>
+
+        <!-- 右墙 (x = 2)  法线 -x -->
+        <SceneObject>
+            <Transform>
+                <Position>0, 0, 0</Position>
+                <Rotation>0, 0, 0</Rotation>
+                <Scale>1.0</Scale>
+            </Transform>
+            <Primitives>
+                <Triangle>
+                    <Vertex>2,  1.5, 2</Vertex>
+                    <Vertex>2, -1.5, 2</Vertex>
+                    <Vertex>2, -1.5, 6</Vertex>
+                </Triangle>
+                <Triangle>
+                    <Vertex>2,  1.5, 2</Vertex>
+                    <Vertex>2, -1.5, 6</Vertex>
+                    <Vertex>2,  1.5, 6</Vertex>
+                </Triangle>
+            </Primitives>
+        </SceneObject>
+
+        <!-- 后墙 (z = 6)  法线 -z -->
+        <SceneObject>
+            <Transform>
+                <Position>0, 0, 0</Position>
+                <Rotation>0, 0, 0</Rotation>
+                <Scale>1.0</Scale>
+            </Transform>
+            <Primitives>
+                <Triangle>
+                    <Vertex>-2,  1.5, 6</Vertex>
+                    <Vertex> 2,  1.5, 6</Vertex>
+                    <Vertex> 2, -1.5, 6</Vertex>
+                </Triangle>
+                <Triangle>
+                    <Vertex>-2,  1.5, 6</Vertex>
+                    <Vertex> 2, -1.5, 6</Vertex>
+                    <Vertex>-2, -1.5, 6</Vertex>
+                </Triangle>
+            </Primitives>
+        </SceneObject>
+
+        <!-- 地板 (y = -1.5)  法线 +y -->
+        <SceneObject>
+            <Transform>
+                <Position>0, 0, 0</Position>
+                <Rotation>0, 0, 0</Rotation>
+                <Scale>1.0</Scale>
+            </Transform>
+            <Primitives>
+                <Triangle>
+                    <Vertex> 2, -1.5, 2</Vertex>
+                    <Vertex>-2, -1.5, 2</Vertex>
+                    <Vertex>-2, -1.5, 6</Vertex>
+                </Triangle>
+                <Triangle>
+                    <Vertex> 2, -1.5, 2</Vertex>
+                    <Vertex>-2, -1.5, 6</Vertex>
+                    <Vertex> 2, -1.5, 6</Vertex>
+                </Triangle>
+            </Primitives>
+        </SceneObject>
+
+        <!-- 天花板 (y = 1.5)  法线 -y -->
+        <SceneObject>
+            <Transform>
+                <Position>0, 0, 0</Position>
+                <Rotation>0, 0, 0</Rotation>
+                <Scale>1.0</Scale>
+            </Transform>
+            <Primitives>
+                <Triangle>
+                    <Vertex>-2, 1.5, 2</Vertex>
+                    <Vertex> 2, 1.5, 2</Vertex>
+                    <Vertex> 2, 1.5, 6</Vertex>
+                </Triangle>
+                <Triangle>
+                    <Vertex>-2, 1.5, 2</Vertex>
+                    <Vertex> 2, 1.5, 6</Vertex>
+                    <Vertex>-2, 1.5, 6</Vertex>
+                </Triangle>
+            </Primitives>
+        </SceneObject>
+
+        <!-- 近处小球（半径 0.55，底部贴地） -->
+        <SceneObject>
+            <Transform>
+                <Position>0.6, -0.95, 3</Position>
+                <Rotation>0, 0, 0</Rotation>
+                <Scale>1.0</Scale>
+            </Transform>
+            <Primitives>
+                <Sphere>
+                    <Radius>0.55</Radius>
+                </Sphere>
+            </Primitives>
+        </SceneObject>
+
+        <!-- 远处小球（半径 0.6，底部贴地） -->
+        <SceneObject>
+            <Transform>
+                <Position>-0.6, -0.9, 5.5</Position>
+                <Rotation>0, 0, 0</Rotation>
+                <Scale>1.0</Scale>
+            </Transform>
+            <Primitives>
+                <Sphere>
+                    <Radius>0.6</Radius>
+                </Sphere>
+            </Primitives>
+        </SceneObject>
+    </SceneObjects>
+</Scene>

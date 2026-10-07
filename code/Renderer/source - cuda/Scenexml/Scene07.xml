@@ -40,12 +40,6 @@
             <AbsorptionCoef>4, 2.5, 2</AbsorptionCoef>
             <ReflectionColor>1, 1, 1</ReflectionColor>
         </Material>
-        <Material>
-            <Name>M_Glass_Sphere</Name>
-            <Type>DielectricSpecular</Type>
-            <Eta>1.5</Eta>
-            <TransmissionColor>1, 1, 1</TransmissionColor>
-        </Material>
     </Materials>
 
     <SceneObjects>
@@ -56,7 +50,7 @@
                 <Rotation>0, 0, 0</Rotation>
                 <Scale>1</Scale>
             </Transform>
-            <Material>M_Lambert_Red</Material>
+            <Material>M_Metal_Sphere1</Material>
             <Primitives>
                 <Sphere>
                     <Radius>0.3</Radius>
@@ -71,7 +65,7 @@
                 <Rotation>0, 0, 0</Rotation>
                 <Scale>1</Scale>
             </Transform>
-            <Material>M_Glass_Sphere</Material>
+            <Material>M_Metal_Sphere2</Material>
             <Primitives>
                 <Sphere>
                     <Radius>0.3</Radius>

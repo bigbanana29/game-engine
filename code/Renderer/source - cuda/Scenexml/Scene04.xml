@@ -14,37 +14,17 @@
         <Material>
             <Name>M_Lambert_Red</Name>
             <Type>Lambert</Type>
-            <Albedo>1.0, 0.3, 0.3</Albedo>
+            <Albedo>0.6, 0.2, 0.2</Albedo>
         </Material>
         <Material>
             <Name>M_Lambert_Blue</Name>
             <Type>Lambert</Type>
-            <Albedo>0.3, 0.3, 1.0</Albedo>
+            <Albedo>0.2, 0.2, 0.6</Albedo>
         </Material>
         <Material>
             <Name>M_Lambert_Gray</Name>
             <Type>Lambert</Type>
-            <Albedo>0.8, 0.8, 0.8</Albedo>
-        </Material>
-        <Material>
-            <Name>M_Metal_Sphere1</Name>
-            <Type>ConductorSpecular</Type>
-            <Eta>0.5, 0.5, 0.5</Eta>
-            <AbsorptionCoef>3, 2.5, 2.5</AbsorptionCoef>
-            <ReflectionColor>1, 1, 1</ReflectionColor>
-        </Material>
-        <Material>
-            <Name>M_Metal_Sphere2</Name>
-            <Type>ConductorSpecular</Type>
-            <Eta>0.3, 1.0, 1.4</Eta>
-            <AbsorptionCoef>4, 2.5, 2</AbsorptionCoef>
-            <ReflectionColor>1, 1, 1</ReflectionColor>
-        </Material>
-        <Material>
-            <Name>M_Glass_Sphere</Name>
-            <Type>DielectricSpecular</Type>
-            <Eta>1.5</Eta>
-            <TransmissionColor>1, 1, 1</TransmissionColor>
+            <Albedo>0.5, 0.5, 0.5</Albedo>
         </Material>
     </Materials>
 
@@ -56,7 +36,7 @@
                 <Rotation>0, 0, 0</Rotation>
                 <Scale>1</Scale>
             </Transform>
-            <Material>M_Lambert_Red</Material>
+            <Material>M_Lambert_Gray</Material>
             <Primitives>
                 <Sphere>
                     <Radius>0.3</Radius>
@@ -71,7 +51,7 @@
                 <Rotation>0, 0, 0</Rotation>
                 <Scale>1</Scale>
             </Transform>
-            <Material>M_Glass_Sphere</Material>
+            <Material>M_Lambert_Gray</Material>
             <Primitives>
                 <Sphere>
                     <Radius>0.3</Radius>
@@ -152,7 +132,7 @@
                 <Rotation>0, -90, 0</Rotation>
                 <Scale>1</Scale>
             </Transform>
-            <Material>M_Lambert_Blue</Material>
+            <Material>M_Lambert_Red</Material>
             <Primitives>
                 <Triangle>
                     <V0>-1, -0.75, 0</V0>
@@ -203,15 +183,15 @@
         <!-- 点光源 -->
         <PointLight>
             <Position>0, 1, 0</Position>
-            <Intensity>1, 1, 1</Intensity>
+            <Intensity>0.3, 0.3, 1.1</Intensity>
             <Attenuations>1, 0, 0</Attenuations>
         </PointLight>
 
         <!-- 聚光灯 -->
         <SpotLight>
-            <Position>-0.8, 1.2, 1.0</Position>
-            <Direction>2, -1.5, 1.5</Direction>
-            <Intensity>2, 2, 2</Intensity>
+            <Position>-0.8, 0.9, 0</Position>
+            <Direction>2, -1, 0</Direction>
+            <Intensity>1.2, 0.8, 1</Intensity>
             <InnerAngle>10</InnerAngle>
             <OuterAngle>60</OuterAngle>
             <Attenuations>1, 0, 0</Attenuations>

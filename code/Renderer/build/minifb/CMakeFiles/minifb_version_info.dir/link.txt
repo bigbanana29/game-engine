@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\minifb_version_info.dir/objects.a
-C:\software\MinGW\bin\ar.exe qc CMakeFiles\minifb_version_info.dir/objects.a @CMakeFiles\minifb_version_info.dir\objects1.rsp
-C:\software\MinGW\bin\c++.exe -Wl,--whole-archive CMakeFiles\minifb_version_info.dir/objects.a -Wl,--no-whole-archive -o minifb_version_info.exe -Wl,--out-implib,libminifb_version_info.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\minifb_version_info.dir\linkLibs.rsp

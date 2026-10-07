@@ -1,254 +1,247 @@
-#include "Renderer.h"
+ï»¿#include "Renderer.h"
 #include <MiniFB.h>
 #include "Common.h"
 #include "Material.h"
 #include <thread>
-#include <cstdlib>
-#include <cstdint>
-#include <cmath>
 #include <vector>
+#include <cmath>
 
-Renderer::Renderer(int w,int h,int samplePerPixel,const char* filepath)
-    :mViewportWidth(w),
-     mViewportHeight(h),
-     SamplePerPixel(samplePerPixel)
+Renderer::Renderer(int w, int h, int minDepth, int maxDepth, int samplePerPixel, const char* filepath)
+	: mViewportWidth(w)
+    , mViewportHeight(h)
+	, mMinDepth(minDepth)
+    , mMaxDepth(maxDepth)
+	, SamplePerPixel(samplePerPixel)
 {
-    mCurrentPixelIndex = 0;
-    mScene = Scene::LoadSceneFromXML(filepath, w, h);
-    if (!mScene) {
-        std::cerr << "Scene loading failed, exiting." << std::endl;
-        exit(EXIT_FAILURE);
-    }
-
-    //auto pMaterial = mScene->CreateMaterial<LambertMaterial>("RedLambert", Color(1.0f,0.0f,0.0f));
-    //auto pSceneObject1 = mScene->CreateSceneObject(Vector3f(0,0,5),Vector3f(0,0,0),2.0f);
-    //auto pSceneObject2 = mScene->CreateSceneObject(Vector3f(0,0,2),Vector3f(0,0,0),1.0f);
-    
-    //pSceneObject1->SetMaterial(pMaterial);
-    //pSceneObject2->SetMaterial(pMaterial);
-    //mScene = new Scene();
-
-    //ÉèÖÃÉãÏñ»ú
-    //Camera camera;
-    //camera.Initialize(
-    //    Vector3f(0.0f,0.0f,0.0f),//Ïà»úÎ»ÖÃ
-    //    Vector3f(0.0f,0.0f,1.0f),//Ä¿±êÎ»ÖÃ
-    //    Vector3f(0.0f,1.0f,0.0f),//ÉÏÎ»ÖÃ
-    //    glm::radians(60.0f),//pov
-    //    0.1f,//½ü²Ã¼ôÃæ
-    //    1000.0f,//Ô¶²Ã¼ôÃæ
-    //    w,h//ÊÓ¿Ú¿í¸ß
-    //);
-
-    //mScene -> SetCamera(camera);
-
-    //¸ø³¡¾°Ìí¼ÓÎïÌå
-    //SceneObject* pSceneObject = mScene ->CreateSceneObject(Vector3f(0,0,5),Vector3f(0,0,0),2.0f);
-    //pSceneObject->CreatePrimitive<Triangle>(Vector3f(-1, -1, 0), Vector3f(1, -1, 0), Vector3f(1, 1, 0));
-    //pSceneObject->CreatePrimitive<Triangle>(Vector3f(-1, -1, 0), Vector3f(1, 1, 0), Vector3f(-1, 1, 0));
-
-    //SceneObject* pSceneObject2 = mScene ->CreateSceneObject(Vector3f(0,0,2),Vector3f(0,0,0),1.0f);
-    //pSceneObject2 -> CreatePrimitive<Sphere>(0.5f);
-
-    //auto pSphere = new Sphere(Vector3f(-1.0f,-1.0f,10),1.0f);
-    //auto pDisk = new Disk(Vector3f(0,-2.0f,5),Vector3f(glm::radians(0.0f),0,0),1.0f);
-    //auto pTriangle = new Triangle(Vector3f(-1,0,0),Vector3f(0,1,0),Vector3f(1,0,0),
-    //    MakeWorldTransform(Vector3f(0,0,5),Vector3f(0,glm::radians(45.0f),glm::radians(60.0f)),2.0f));
-
-    //mPrimitives.push_back(pSphere);
-    //mPrimitives.push_back(pDisk);
-    //mPrimitives.push_back(pTriangle);
-
-    // Ìí¼ÓÒ»¸ö¾ØÐÎ£º
-
-    //mTestSceneObject = new SceneObject(Vector3f(0,0,5),Vector3f(0,0,0),2.0f);
-
-    //auto pTriangle1 = new Triangle(mTestSceneObject,Vector3f(-1, -1, 0), Vector3f(1, -1, 0), Vector3f(1, 1, 0));
-
-    //auto pTriangle2 = new Triangle(mTestSceneObject,Vector3f(-1, -1, 0), Vector3f(1, 1, 0), Vector3f(-1, 1, 0));
-
-    //mTestSceneObject -> AddPrimitive(pTriangle1);
-    //mTestSceneObject -> AddPrimitive(pTriangle2);
+	mCurrentPixelIndex = 0;
+	mScene = Scene::LoadSceneFromXML(filepath, w, h);
 }
 
 Renderer::~Renderer()
 {
-    if(mScene)
-    {
-        delete mScene;
-    }
+	if (mScene)
+		delete mScene;
 }
 
-void Renderer::Run() {
-    struct mfb_window *window = mfb_open_ex("my display", mViewportWidth, mViewportHeight, MFB_WF_RESIZABLE);
-    if (window == NULL)
-        return;
-
-    // ÊÓ¿ÚÉÏÃ¿¸öÏñËØµãµÄÑÕÉ«£¬ÒÔ32Î»ÕûÊý±íÊ¾£¬¸ñÊ½Îª0xAARRGGBB(Alpha£¬Red£¬Green£¬Blue)
-    mBuffer = reinterpret_cast<uint32_t*>(calloc(mViewportWidth * mViewportHeight, 4));
-
-    std::thread renderThread(&Renderer::RunRenderThread,this);
-    renderThread.detach();
-
-    int numThreads = std::thread::hardware_concurrency();
-    std::vector<std::thread> renderThreads(numThreads);
-    for (int i = 0; i < numThreads; i++)
-    {
-        renderThreads[i] = std::thread(&Renderer::RunRenderThread,this);
-        renderThreads[i].detach();
-    }
-    
-    // present·½·¨:
-    mfb_update_state state;
-    do {
-        state = mfb_update_ex(window, mBuffer, mViewportWidth, mViewportHeight);
-        if (state != MFB_STATE_OK)
-            break;
-    } while (mfb_wait_sync(window));
-
-    free(mBuffer);
-    mBuffer = NULL;
-    window = NULL;
-}
-
-Color Renderer::RenderPixel(int x,int y)
+void Renderer::Run()
 {
-    //SSAA
-    static const int N = 10;
-    Color resultColor(0,0,0);
+	struct mfb_window* window = mfb_open_ex("Fortune Renderer", mViewportWidth, mViewportHeight, MFB_WF_RESIZABLE);
+	if (window == NULL)
+		return;
 
-    for(int i = 0;i < N;i++)
-    {
-        //(x,y) - (x+1,y+1)·¶Î§ÄÚËæ»ú²ÉÑùÒ»¸öµã
-        float px = x + glm::linearRand(0.0f,1.0f);
-        float py = y + glm::linearRand(0.0f,1.0f);
+	// å±å¹•/çª—å£/è§†å£ä¸Šæ¯ä¸ªåƒç´ ç‚¹çš„é¢œè‰²ï¼Œä»¥32ä½æ•´æ•°è¡¨ç¤ºï¼Œæ ¼å¼ä¸º0xAARRGGBBï¼ˆAlpha, Red, Green, Blueï¼‰
+	mBuffer = (uint32_t*)malloc(mViewportWidth * mViewportHeight * 4);
 
-        Color color = RenderSubPixel(px,py);
-        resultColor += (color / (float)N);
-    }
-    return resultColor; //È¡Æ½¾ùÖµ£¬µÃµ½×îÖÕÑÕÉ«
+	std::thread renderThread(&Renderer::RunRenderThread, this);
+	renderThread.detach();
+
+	int numThreads = std::thread::hardware_concurrency();
+	std::vector<std::thread> renderThreads(numThreads);
+	for (int i = 0; i < numThreads; i++) 
+	{
+		renderThreads[i] = std::thread(&Renderer::RunRenderThread, this);
+		renderThreads[i].detach();
+	}
+
+	// Presentï¼š
+	mfb_update_state state;
+	do {
+		state = mfb_update_ex(window, mBuffer, mViewportWidth, mViewportHeight);
+
+		if (state != MFB_STATE_OK)
+			break;
+
+	} while (mfb_wait_sync(window));
+
+	free(mBuffer);
+	mBuffer = NULL;
+	window = NULL;
 }
 
-Color Renderer::RenderSubPixel(float x,float y)
+Color Renderer::RenderPixel(int x, int y)
 {
-    Ray ray = mScene->GetCamera().GetRay(x,y);
-    Color color = GetRadiance(ray);
-    return color;
+	// SSAA
+	const int N = SamplePerPixel; // æ¯ä¸ªåƒç´ é‡‡æ ·çš„æ¬¡æ•°
+	Color resultColor(0, 0, 0);
 
-    //bool bHit = false;
-    //for (const auto& primitive : mPrimitives)
-    //{
-    //    if(primitive ->Intersect(ray,isect))
-    //    {
-    //        ray.maxt = isect.t;
-    //        bHit = true;
-    //    }
-    //}
+	for (int i = 0; i < N; i++)
+	{
+		// (x, y) - (x+1, y+1)èŒƒå›´å†…éšæœºé‡‡æ ·ä¸€ä¸ªç‚¹ï¼š
+		float px = x + glm::linearRand(0.0f, 1.0f);
+		float py = y + glm::linearRand(0.0f, 1.0f);
 
-    //if(bHit)
-    //{
-    //    color = isect.normal * 0.5f + 0.5f;//½«·¨ÏßÏòÁ¿Ó³Éäµ½[0£¬1]·¶Î§ÄÚ£¬×÷ÎªÑÕÉ«Êä³ö
-    //}
+		Color color = RenderSubPixel(px, py);
+		resultColor += (color / (float)N);
+	}
 
-    //return color;
+	return resultColor; // å–å¹³å‡å€¼ï¼Œå¾—åˆ°æœ€ç»ˆé¢œè‰²	
+}
+
+Color Renderer::RenderSubPixel(float x, float y)
+{
+	Ray ray = mScene->GetCamera().GetRay(x, y);
+	Color color = GetRadiance(ray, 0);
+	return color;
 }
 
 Color Renderer::GetIrradiance(const Ray& ray)
 {
-    Intersection isect;
-    if(!mScene->Intersect(ray, isect))
-    {
-        return Color(0,0,0);
-    }
+	Intersection isect;
+	if (!mScene->Intersect(ray, isect))
+		return Color(0, 0, 0);
 
-    Color E(0,0,0); //ÀÛ¼Ó¹âÕÕµÄ·øÉä¶È
-    //E(p)
-    for(Light* pLight : mScene->GetLights())
-    {
-        Vector3f sourcePos;
-        Color L = pLight->GetRadiance(isect.position, sourcePos);
+	Color E(0, 0, 0);
 
-        
-        //ÇóshadowRay
-        Ray shadowRay;
-        shadowRay.o = isect.position;
-        shadowRay.d = glm::normalize(sourcePos - isect.position);
-        shadowRay.mint = 0.001f; //±ÜÃâ×ÔÏà½»
-        shadowRay.maxt = glm::length(sourcePos - isect.position);
+	// E(p)
+	for (Light* pLight : mScene->GetLights())
+	{
+		Vector3f sourcePos;
+		Color L = pLight->GetRadiance(isect.position, sourcePos);
 
-        Intersection shadow_isect;
-        if(mScene->Intersect(shadowRay, shadow_isect))
-        {
-            continue; //±»ÕÚµ²£¬Ìø¹ý¸Ã¹âÔ´
-        }
+		// æ±‚shadowRay
+		Ray shadowRay;
+		shadowRay.o = isect.position;
+		shadowRay.d = glm::normalize(sourcePos - isect.position);
+		shadowRay.mint = 1e-3f;
+		shadowRay.maxt = glm::length(sourcePos - isect.position);
 
-        float cosTheta = glm::dot(isect.normal, shadowRay.d);
+		Intersection shadow_isect;
+		if (mScene->Intersect(shadowRay, shadow_isect)) // å¦‚æžœshadowRayä¸Žåœºæ™¯ä¸­çš„ç‰©ä½“ç›¸äº¤ï¼Œè¯´æ˜Žè¯¥ç‚¹è¢«é®æŒ¡äº†
+			continue;
 
-        E += L * glm::max(cosTheta, 0.0f);
-    }
-    return E;
+		float cosTheta = glm::dot(isect.normal, shadowRay.d);
+		E += L * glm::max(cosTheta, 0.0f);
+	}
+
+	return E;
 }
 
-Color Renderer::GetRadiance(const Ray& ray)
+Color Renderer::GetRadiance(const Ray& ray, int depth)
 {
-    Intersection isect;
-    SceneObject* pSceneObject = mScene->Intersect(ray, isect);
-    if(pSceneObject == nullptr)
-    {
-        return Color(0,0,0);
-    }
+	if (depth > mMaxDepth)
+		return Color(0, 0, 0);
 
-    Material* pMaterial = pSceneObject->GetMaterial();
-    Color Lo(0,0,0); //ÀÛ¼Ó¹âÕÕµÄ·øÉä¶È
+	// ä¿„ç½—æ–¯è½®ç›˜
+	static const float SurvivalProbability = 0.8f;
+	float RewardFactor = 1.0f;
+	if (depth >= mMinDepth)
+	{
+		float K = Random01();
+		if (K > SurvivalProbability)
+		{
+			return Color(0, 0, 0);
+		}
+		RewardFactor = 1.0f / SurvivalProbability;
+	}
 
-    Matrix3x3 localToWorld = MakeCoordinateSystem(isect.normal);
-    Matrix3x3 worldToLocal = glm::inverse(localToWorld);
+	Intersection isect;
+	SceneObject* pSceneObject = mScene->Intersect(ray, isect);
+	if (pSceneObject == nullptr)
+		return Color(0, 0, 0);
 
-    Vector3f wo = worldToLocal * (-ray.d); //³öÉä·½Ïò£¬ÞD“Qµ½¾Ö²¿×ø±êÏµ
+	Material* pMaterial = pSceneObject->GetMaterial();
+	Color Lo(0, 0, 0);
 
-    for(Light* pLight : mScene->GetLights())
-    {
-        Vector3f sourcePos;
-        Color L = pLight->GetRadiance(isect.position, sourcePos);
-        
-        //ÇóshadowRay
-        Ray shadowRay;
-        shadowRay.o = isect.position;
-        shadowRay.d = glm::normalize(sourcePos - isect.position);
-        shadowRay.mint = 0.001f; //±ÜÃâ×ÔÏà½»
-        shadowRay.maxt = glm::length(sourcePos - isect.position);
+	Matrix3x3 localToWorld = MakeCoordinateSystem(isect.normal);
+	Matrix3x3 worldToLocal = glm::transpose(localToWorld);
 
-        Intersection shadow_isect;
-        if(mScene->Intersect(shadowRay, shadow_isect))
-        {
-            continue; //±»ÕÚµ²£¬Ìø¹ý¸Ã¹âÔ´
-        }
+	Vector3f wo = worldToLocal * (-ray.d); // å‡ºå°„æ–¹å‘ï¼Œè½¬æ¢åˆ°å±€éƒ¨åæ ‡ç³»
 
-        Vector3f wi = worldToLocal * shadowRay.d;//ÈëÉä·½Ïò£¬ÞD“Qµ½¾Ö²¿×ø±êÏµ
-        float cosTheta = glm::dot(isect.normal, shadowRay.d);
-        Color brdf = pMaterial->BRDF(wo,wi);
-        Lo += brdf * L * glm::max(cosTheta, 0.0f);
-    }
-    return Lo;
+	// ç›´æŽ¥å…‰ç…§ï¼š
+	if (!pMaterial->IsSpecular())
+	{
+		for (Light* pLight : mScene->GetLights())
+		{
+			Vector3f sourcePos;
+			Color L = pLight->GetRadiance(isect.position, sourcePos);
+
+			// æ±‚shadowRay
+			Ray shadowRay;
+			shadowRay.o = isect.position;
+			shadowRay.d = glm::normalize(sourcePos - isect.position);
+			shadowRay.mint = 1e-3f;
+			shadowRay.maxt = glm::length(sourcePos - isect.position);
+
+			Intersection shadow_isect;
+			if (mScene->Intersect(shadowRay, shadow_isect)) // å¦‚æžœshadowRayä¸Žåœºæ™¯ä¸­çš„ç‰©ä½“ç›¸äº¤ï¼Œè¯´æ˜Žè¯¥ç‚¹è¢«é®æŒ¡äº†
+				continue;
+
+			Vector3f wi = worldToLocal * shadowRay.d; // å…¥å°„æ–¹å‘ï¼Œè½¬æ¢åˆ°å±€éƒ¨åæ ‡ç³»
+			float cosTheta = glm::dot(isect.normal, shadowRay.d);
+			Color brdf = pMaterial->BRDF(wo, wi);
+			Lo += brdf * L * glm::max(cosTheta, 0.0f);
+		}
+	}
+
+	// é—´æŽ¥å…‰ç…§ï¼š
+	if (pMaterial->IsSpecular())
+	{
+		// åå°„ï¼š
+		{
+			Vector3f wi(-wo.x, -wo.y, wo.z);
+			Color brdf = pMaterial->BRDF(wo, wi);
+			Ray r;
+			r.d = localToWorld * wi;
+			r.o = isect.position;
+			r.mint = 1e-3f;
+			Color Li = GetRadiance(r, depth + 1);
+			Lo += brdf * Li * std::fabs(wi.z);
+		}
+		
+		// æŠ˜å°„ï¼š
+		{
+			Vector3f wi;
+			if (pMaterial->SampleWt(wo, wi))
+			{
+				Color btdf = pMaterial->BTDF(wo, wi);
+				Ray r;
+				r.d = localToWorld * wi;
+				r.o = isect.position;
+				r.mint = 1e-3f;
+
+				// todo:
+				Color Li = GetRadiance(r, depth + 1);
+				Lo += btdf * Li * std::fabs(wi.z);
+			}
+		}
+		
+	}
+	else
+	{
+		const float theta = Random(0.0f, PI * 0.5f);
+		const float phi = Random(0.0f, 2 * PI);
+		Vector3f wi = GetSphericalCoordinate(theta, phi);
+
+		Color brdf = pMaterial->BRDF(wo, wi);
+		Ray r;
+        r.d = localToWorld * wi;
+        r.o = isect.position;
+		r.mint = 1e-3f;
+		Color Li = GetRadiance(r, depth + 1);
+		Lo += brdf * Li * std::cos(theta) * std::sin(theta) * PI * PI;
+	}
+
+	return Lo * RewardFactor;
 }
 
-//äÖÈ¾Ïß³ÌµÄÈë¿Úº¯Êý£¬¸ºÔðÖ´ÐÐäÖÈ¾Ñ­»·
+// æ¸²æŸ“çº¿ç¨‹çš„å…¥å£å‡½æ•°ï¼Œè´Ÿè´£æ‰§è¡Œæ¸²æŸ“å¾ªçŽ¯
 void Renderer::RunRenderThread()
 {
-    //¶ÁÈ¡µ±Ç°ÆÁÄ»µÄÏÂÒ»¸öÏñËØ
-    while(true)
-    {
-        int pixelIndex = mCurrentPixelIndex.fetch_add(1);
-        if(pixelIndex >= mViewportWidth * mViewportHeight)
-            break;
+	
+	while (true)
+	{
+		// è¯»å–å½“å‰å±å¹•çš„ä¸‹ä¸€ä¸ªåƒç´ 
+		int pixelIndex = mCurrentPixelIndex.fetch_add(1);
+		if (pixelIndex >= mViewportWidth * mViewportHeight)
+			break;
 
-        int x = pixelIndex % mViewportWidth;
-        int y = pixelIndex / mViewportWidth;
+		int x = pixelIndex % mViewportWidth;
+		int y = pixelIndex / mViewportWidth;
 
-        Color color = RenderPixel(x,y);
-        uint32_t r = glm::clamp((uint32_t)std::round(color.r * 255.0f),0u,255u);
-        uint32_t g = glm::clamp((uint32_t)std::round(color.g * 255.0f),0u,255u);
-        uint32_t b = glm::clamp((uint32_t)std::round(color.b * 255.0f),0u,255u);
-        mBuffer[y * mViewportWidth + x] = (r << 16) | (g << 8) | b;
-    }
+		Color color = RenderPixel(x, y);
+		uint32_t r = glm::clamp((uint32_t)std::round(color.r * 255.0f), 0u, 255u);
+		uint32_t g = glm::clamp((uint32_t)std::round(color.g * 255.0f), 0u, 255u);
+		uint32_t b = glm::clamp((uint32_t)std::round(color.b * 255.0f), 0u, 255u);
+		mBuffer[y * mViewportWidth + x] = (r << 16) | (g << 8) | (b);
+	}
 }
