@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"C:/Users/bigbanana666/Desktop/game engine/code/build/cmake_install.cmake",
-		"C:/Users/bigbanana666/Desktop/game engine/code/build/minifb/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

@@ -1,2 +1,51 @@
+# 编译产物
+build/
 code/build/
+*.exe
+*.obj
+*.o
+*.dll
+*.dll.a
+*.lib
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.recipe
+*.tlog
+*.lastbuildstate
+imgui.ini
+
+# 已拆出去的渲染器
 code/Renderer/
+
+# 只保留 Valkyrie 模型
+assets/dragon/
+assets/Gwyndolin/
+assets/marika/
+
+# glm 只保留核心
+include/glm/test/
+include/glm/doc/
+include/glm/cmake/
+include/glm/bench/
+
+# glfw 只保留 include 和 mingw 库
+glfw-3.4.bin.WIN64/docs/
+glfw-3.4.bin.WIN64/lib-vc2013/
+glfw-3.4.bin.WIN64/lib-vc2015/
+glfw-3.4.bin.WIN64/lib-vc2017/
+glfw-3.4.bin.WIN64/lib-vc2019/
+glfw-3.4.bin.WIN64/lib-vc2022/
+glfw-3.4.bin.WIN64/lib-static-ucrt/
+
+# imgui 示例
+imgui/examples/
+
+# IDE
+.vs/
+.vscode/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
