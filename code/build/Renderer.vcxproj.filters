@@ -4,13 +4,13 @@
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Common.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Disk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Material.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Primitive.cpp">

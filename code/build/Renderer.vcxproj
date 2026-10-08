@@ -369,9 +369,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Camera.cpp" />
-    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Common.cpp" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Disk.cpp" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Light.cpp" />
+    <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Material.cpp" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Primitive.cpp" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Renderer.cpp" />
     <ClCompile Include="C:\Users\bigbanana666\Desktop\game engine\code\Renderer\source\src\Scene.cpp" />

@@ -5,9 +5,9 @@
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/*.cpp")
 set(OLD_GLOB
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Camera.cpp"
-  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Common.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Disk.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Light.cpp"
+  "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Material.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Primitive.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Renderer.cpp"
   "C:/Users/bigbanana666/Desktop/game engine/code/Renderer/source/src/Scene.cpp"
